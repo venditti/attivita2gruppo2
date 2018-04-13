@@ -1,15 +1,30 @@
+<html>
 <head>
-</head>
-<body>
-
-<form name="myform">
-    <p> Nome : <input type=”text” name=”nome”> </p>
-    <p> Cognome : <input type=”text” name=”cognome”> </p>
-    <p> Anno di nascita : <input type=”text” number=”anno di nascita”> </p>
-    <button id="pulsante" onclick="verifica()">Entra</button>   
-  </form>
 
 <script type="text/javascript">
-   
+function funzioneEntra()
+{
+    var nome=document.forms["formDati"]["nome"].value;
+    var cognome=document.forms["formDati"]["cognome"].value;
+    var anno=document.forms["formDati"]["anno"].value;
+    if(anno<=2000)
+    document.write("Benvenuto " + nome + " " + cognome);
+    else
+    document.write("Utente non autorizzato");
+}
+
 </script>
+</head>
+<body>
+<form id="formDati" action="" method="" >
+Nome <input name="nome" type="text"/>
+<br>
+<br>
+Cognome <input name="cognome" type="text"/>
+<br>
+<br>
+Data di nascita <input name="anno" type="text"/>
+<input type="button" value="Entra" onclick="funzioneEntra()"/>
+</form>
 </body>
+</html>
